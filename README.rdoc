@@ -1,0 +1,5 @@
+== Welcome to Rails
+this is a test of mongo db and devise
+
+== Getting Started
+
