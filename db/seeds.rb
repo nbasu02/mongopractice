@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts 'Emptying this shiz.'
+Mongoid.master.collections.reject { |c| c.name =~ /^system/}.each(&:drop)
+puts 'New user, man.'
+
+user = User.create! :name => 'My Name', :email => 'this@that.com', :password => 'yourmother', :password_confirmation => 'yourmother'
