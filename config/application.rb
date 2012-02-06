@@ -43,7 +43,7 @@ module Mongopractice
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password]
+    config.filter_parameters += [:password, :password_confirmation]
 
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
@@ -61,5 +61,13 @@ module Mongopractice
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.test_framework false
+      g.fixture_replacement :factory_girl
+      g.stylesheets false
+    end
   end
 end
